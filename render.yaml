@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: jobconnect-portal
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: DATA_DIR
+        value: /var/data
+    disk:
+      name: jobconnect-data
+      mountPath: /var/data
+      sizeGB: 1
